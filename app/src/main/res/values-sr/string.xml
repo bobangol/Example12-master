@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="activities">Aktivnosti</string>
+    <string name="first_activity">Prva Aktivnost</string>
+    <string name="second_activity">Druga Aktivnost</string>
+    <string name="third_activity">Treca Aktivnost</string>
+    <string name="start_activity">Start druge aktivnosti</string>
+    <string name="select_contact">Izaberi kontakt</string>
+    <string name="start_third_activity">Start trece aktivnosti</string>
+    <string name="start_camera">Start kamere</string>
+
+</resources>

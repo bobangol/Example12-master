@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- In principle, each app should have unique package -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="rs.aleph.android.example12">
+
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/activities"
+        android:icon="@mipmap/ic_launcher1">
+        android:theme="@style/Theme.AppCompat.Light">
+
+        <!-- Declares 1st (main) activity. Action "MAIN" and category "LAUNCHER" properties makes it visible in the application launcher -->
+        <activity
+            android:name="rs.aleph.android.example12.activities.FirstActivity"
+            android:label="@string/first_activity"
+            android:icon="@mipmap/ic_launcher1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Declares 2nd activity -->
+        <activity
+            android:name=".activities.SecondActivity"
+            android:label="@string/second_activity"
+            android:icon="@mipmap/ic_launcher1">
+        </activity>
+
+        <activity
+            android:name=".activities.ThirdActivity"
+            android:label="@string/third_activity"
+            android:icon="@mipmap/ic_launcher1">
+        </activity>
+
+    </application>
+
+</manifest>
