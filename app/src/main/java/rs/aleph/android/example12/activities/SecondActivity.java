@@ -6,9 +6,11 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -24,6 +26,7 @@ import rs.aleph.android.example12.activities.model.Jelo;
 import rs.aleph.android.example12.activities.model.Kategorija;
 import rs.aleph.android.example12.activities.provider.JeloProvider;
 import rs.aleph.android.example12.activities.provider.KategorijaProvider;
+import rs.aleph.android.example12.activities.provider.SastojciProvider;
 
 // Each activity extends Activity class
 public class SecondActivity extends Activity {
@@ -75,6 +78,24 @@ public class SecondActivity extends Activity {
         ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, categories);
         category.setAdapter(adapter);
         category.setSelection((int)JeloProvider.getJeloById(position).getKategorija().getId());
+
+    /*
+        final List<String> sastojciImena = SastojciProvider.getSastojci1();
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, R.layout.list_item, sastojciImena);
+        ListView listView = (ListView) findViewById(R.id.listofJela);
+
+        // Assigns ArrayAdaptar to ListView
+        listView.setAdapter(dataAdapter);
+
+        // Starts the SecondActivity and sends it the selected URL as an extra data
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(SecondActivity.this, SecondActivity.class);
+                intent.putExtra("position", position);
+                startActivity(intent);
+            }
+        });
+    */
 
 
         // Finds "btnBuy" Button and sets "onClickListener" listener

@@ -4,6 +4,6 @@
     android:id="@+id/text1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:drawableLeft="@drawable/ic_action_name"
+    android:drawableLeft="@drawable/ic_action_kitchen"
     android:padding="10dp"
     android:textSize="16sp" />
