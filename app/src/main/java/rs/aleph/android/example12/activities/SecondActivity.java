@@ -2,16 +2,28 @@ package rs.aleph.android.example12.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RatingBar;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 import rs.aleph.android.example12.R;
 import rs.aleph.android.example12.activities.model.Jelo;
 import rs.aleph.android.example12.activities.model.Kategorija;
+import rs.aleph.android.example12.activities.provider.JeloProvider;
+import rs.aleph.android.example12.activities.provider.KategorijaProvider;
 
 // Each activity extends Activity class
 public class SecondActivity extends Activity {
@@ -31,6 +43,49 @@ public class SecondActivity extends Activity {
         // Shows a toast message (a pop-up message)
         Toast toast = Toast.makeText(getBaseContext(), "SecondActivity.onCreate()", Toast.LENGTH_SHORT);
         toast.show();
+        if (savedInstanceState != null) {
+            this.position = savedInstanceState.getInt("position");
+        }
+
+        // Loads an URL into the WebView
+        position = getIntent().getIntExtra("position", 0);
+
+        // Finds "ivImage" ImageView and sets "imageDrawable" property
+        ImageView ivImage = (ImageView) findViewById(R.id.iv_image);
+        InputStream is = null;
+        try {
+            is = getAssets().open(JeloProvider.getJeloById(position).getImage());
+            Drawable drawable = Drawable.createFromStream(is, null);
+            ivImage.setImageDrawable(drawable);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Finds "tvName" TextView and sets "text" property
+        TextView tvName = (TextView) findViewById(R.id.tv_name);
+        tvName.setText(JeloProvider.getJeloById(position).getName());
+
+        // Finds "tvDescription" TextView and sets "text" property
+        TextView tvDescription = (TextView) findViewById(R.id.tv_description);
+        tvDescription.setText(JeloProvider.getJeloById(position).getOpis());
+
+        // Finds "spCategory" Spiner and sets "selection" property
+        Spinner category = (Spinner) findViewById(R.id.sp_category);
+        List<String> categories = KategorijaProvider.getCategoryNames();
+        ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, categories);
+        category.setAdapter(adapter);
+        category.setSelection((int)JeloProvider.getJeloById(position).getKategorija().getId());
+
+
+        // Finds "btnBuy" Button and sets "onClickListener" listener
+        Button btnBuy = (Button) findViewById(R.id.btn_buy);
+        btnBuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast toast = Toast.makeText(v.getContext(), "You've bought " + JeloProvider.getJeloById(position).getName() + "!", Toast.LENGTH_LONG);
+                toast.show();
+            }
+        });
 
 
     }

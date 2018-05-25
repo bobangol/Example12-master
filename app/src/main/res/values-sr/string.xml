@@ -9,5 +9,6 @@
     <string name="select_contact">Izaberi kontakt</string>
     <string name="start_third_activity">Start trece aktivnosti</string>
     <string name="start_camera">Start kamere</string>
+    <string name="button_buy">Kupi</string>
 
 </resources>
