@@ -6,11 +6,15 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.List;
 
 import rs.aleph.android.example12.R;
+import rs.aleph.android.example12.activities.provider.JeloProvider;
 
 // Each activity extends Activity class
 public class FirstActivity extends Activity {
@@ -46,6 +50,21 @@ public class FirstActivity extends Activity {
 		toast.show();
 
 		final List<String> jeloImena = JeloProvider.getJeloImena();
+
+		ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, R.layout.list_item, jeloImena);
+		ListView listView = (ListView) findViewById(R.id.listofJela);
+
+		// Assigns ArrayAdaptar to ListView
+		listView.setAdapter(dataAdapter);
+
+		// Starts the SecondActivity and sends it the selected URL as an extra data
+		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+				intent.putExtra("position", position);
+				startActivity(intent);
+			}
+		});
 	}
 
 	// onStart method is a lifecycle method called after onCreate (or after onRestart when the

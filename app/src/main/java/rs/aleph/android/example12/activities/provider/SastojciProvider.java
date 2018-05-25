@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import rs.aleph.android.example12.activities.model.Kategorija;
-import rs.aleph.android.example12.activities.model.Sastojci;
+import rs.aleph.android.example12.activities.model.Sastojak;
 
-public class SastojciProvider {
-    public static List<Sastojci> getSastojci() {
+public class SastojciProvider {/*
+    public static List<Sastojak> getSastojci() {
 
-        List<Sastojci> sastojci = new ArrayList<>();
-        sastojci.add(new Sastojci(0, "Meso"));
+        List<Sastojak> sastojci = new ArrayList<>();
+        sastojci.add(new Sastojak(0, "Meso", ));
         sastojci.add(new Sastojci(1, "Krompir"));
         sastojci.add(new Sastojci(2, "Sir"));
         sastojci.add(new Sastojci(3, "Lepinja"));
@@ -43,5 +43,5 @@ public class SastojciProvider {
             default:
                 return null;
         }
-    }
+    }*/
 }

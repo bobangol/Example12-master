@@ -36,4 +36,28 @@ public class JeloProvider {
         jela.add(karadjordjeva);
         return jela;
     }
+
+    public static List<String> getJeloImena() {
+
+        List<String> names = new ArrayList<>();
+        names.add("Cevapi");
+        names.add("Karadjordjeva");
+        return names;
+    }
+
+    public static Jelo getJeloById(int id) {
+
+        Kategorija rostilj = new Kategorija(0, "Rostilj");
+        Kategorija gotovoJelo = new Kategorija(1, "Gotova jela");
+        Kategorija pizza = new Kategorija(2, "Pizza");
+
+        switch (id) {
+            case 0:
+                return new Jelo(0, "cevapi.jpg", "Cevapi", "111111", rostilj, null, 1000, 750);
+            case 1:
+                return new Jelo(1, "karadjordjeva.jpeg", "Kara", "222222", gotovoJelo, null, 1200, 100);
+            default:
+                return null;
+        }
+    }
 }
