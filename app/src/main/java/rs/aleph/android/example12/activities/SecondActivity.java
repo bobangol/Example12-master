@@ -18,14 +18,6 @@ public class SecondActivity extends Activity {
 
     private int position = 0;
 
-    ArrayList<Jelo> jela = new ArrayList<Jelo>(10);
-
-
-
-
-    private Jelo[] jela = new Jelo[] {
-            new Jelo(0, "cevapi.jpg", "Cevapi", "Sarajevski cevapi",  )
-    }
 
     // onCreate method is a lifecycle method called when he activity is starting
     @Override
@@ -40,12 +32,7 @@ public class SecondActivity extends Activity {
         Toast toast = Toast.makeText(getBaseContext(), "SecondActivity.onCreate()", Toast.LENGTH_SHORT);
         toast.show();
 
-        Jelo j1 = new Jelo();
-        Kategorija k1 = new Kategorija();
-        j1.setKategorija(k1);
-        k1.addJelo(j1);
 
-        jela.add(j1);
     }
 
     // onStart method is a lifecycle method called after onCreate (or after onRestart when the

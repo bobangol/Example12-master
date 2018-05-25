@@ -1,17 +1,21 @@
 package rs.aleph.android.example12.activities.model;
 
-public class Sastojci {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Sastojak {
 
     private int id;
     private String nazivSastojka;
+    Jelo jelo;
 
-    public Sastojci(){
-
+    public Sastojak(){
     }
 
-    public Sastojci(int id, String nazivSastojka) {
+    public Sastojak(int id, String nazivSastojka, Jelo jelo) {
         this.id = id;
         this.nazivSastojka = nazivSastojka;
+        this.jelo = jelo;
     }
 
     public int getId() {
@@ -29,6 +33,15 @@ public class Sastojci {
     public void setNazivSastojka(String nazivSastojka) {
         this.nazivSastojka = nazivSastojka;
     }
+
+    public Jelo getJelo() {
+        return this.jelo;
+    }
+
+    public void setJelo(Jelo jelo) {
+        this.jelo = jelo;
+    }
+
 
     @Override
     public String toString() {

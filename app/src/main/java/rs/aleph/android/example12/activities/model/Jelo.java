@@ -1,5 +1,7 @@
 package rs.aleph.android.example12.activities.model;
 
+import java.util.List;
+
 public class Jelo {
 
     private int id;
@@ -7,7 +9,7 @@ public class Jelo {
     private String name;
     private String opis;
     private Kategorija kategorija;
-    private Sastojci sastojci;
+    private List<Sastojak> sastojci;
     private int kalorijskaVrednost;
     private double cena;
 
@@ -15,7 +17,7 @@ public class Jelo {
 
     }
 
-    public Jelo(int id, String image, String name, String opis, Kategorija kategorija, Sastojci sastojci, int kalorijskaVrednost, double cena) {
+    public Jelo(int id, String image, String name, String opis, Kategorija kategorija, List<Sastojak> sastojci, int kalorijskaVrednost, double cena) {
         this.id = id;
         this.image = image;
         this.name = name;
@@ -66,11 +68,11 @@ public class Jelo {
         this.kategorija = kategorija;
     }
 
-    public Sastojci getSastojci() {
+    public List<Sastojak> getSastojci() {
         return sastojci;
     }
 
-    public void setSastojci(Sastojci sastojci) {
+    public void setSastojci(List<Sastojak> sastojci) {
         this.sastojci = sastojci;
     }
 

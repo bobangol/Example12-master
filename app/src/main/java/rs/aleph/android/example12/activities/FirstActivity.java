@@ -8,6 +8,8 @@ import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Toast;
 
+import java.util.List;
+
 import rs.aleph.android.example12.R;
 
 // Each activity extends Activity class
@@ -42,6 +44,8 @@ public class FirstActivity extends Activity {
 		// Shows a toast message (a pop-up message)
 		Toast toast = Toast.makeText(getBaseContext(), "FirstActivity.onCreate()", Toast.LENGTH_SHORT);
 		toast.show();
+
+		final List<String> jeloImena = JeloProvider.getJeloImena();
 	}
 
 	// onStart method is a lifecycle method called after onCreate (or after onRestart when the

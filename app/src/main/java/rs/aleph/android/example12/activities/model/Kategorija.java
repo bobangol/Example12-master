@@ -7,10 +7,10 @@ public class Kategorija {
 
     private int id;
     private String nazivKategorije;
-    private List<Jelo> jela = new ArrayList<Jelo>();
+    private List<Jelo> jela;
 
     public Kategorija(){
-
+        jela = new ArrayList<Jelo>();
     }
 
     public Kategorija(int id, String nazivKategorije) {
@@ -40,6 +40,21 @@ public class Kategorija {
 
     public void removeJelo(Jelo jelo) {
         jela.remove(jelo);
+    }
+
+    public Jelo getJelo(int position) {
+
+        return jela.get(position);
+    }
+
+    public List<Jelo> getJelo() {
+
+        return jela;
+    }
+
+    public void setJelo(List<Jelo> jela) {
+
+        this.jela = jela;
     }
 
     @Override
