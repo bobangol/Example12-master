@@ -24,6 +24,7 @@ import java.util.List;
 import rs.aleph.android.example12.R;
 import rs.aleph.android.example12.activities.model.Jelo;
 import rs.aleph.android.example12.activities.model.Kategorija;
+import rs.aleph.android.example12.activities.model.Sastojak;
 import rs.aleph.android.example12.activities.provider.JeloProvider;
 import rs.aleph.android.example12.activities.provider.KategorijaProvider;
 import rs.aleph.android.example12.activities.provider.SastojciProvider;
@@ -78,6 +79,17 @@ public class SecondActivity extends Activity {
         ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, categories);
         category.setAdapter(adapter);
         category.setSelection((int)JeloProvider.getJeloById(position).getKategorija().getId());
+
+        TextView tvSastojci = (TextView) findViewById(R.id.listofSastojci);
+        tvSastojci.setText((CharSequence) JeloProvider.getJeloById(position).getSastojci());
+
+        /*final List<String> sastojciImena = SastojciProvider.getSastojci();
+
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, R.layout.list_item, sastojciImena);
+        ListView listView = (ListView) findViewById(R.id.listofSastojci);
+
+        listView.setAdapter(dataAdapter);*/
+
 
     /*
         final List<String> sastojciImena = SastojciProvider.getSastojci1();

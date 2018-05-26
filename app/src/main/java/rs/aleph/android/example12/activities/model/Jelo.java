@@ -9,7 +9,7 @@ public class Jelo {
     private String name;
     private String opis;
     private Kategorija kategorija;
-    private List<Sastojak> sastojci;
+    private String sastojci;
     private int kalorijskaVrednost;
     private double cena;
 
@@ -17,7 +17,7 @@ public class Jelo {
 
     }
 
-    public Jelo(int id, String image, String name, String opis, Kategorija kategorija, List<Sastojak> sastojci, int kalorijskaVrednost, double cena) {
+    public Jelo(int id, String image, String name, String opis, Kategorija kategorija, String sastojci, int kalorijskaVrednost, double cena) {
         this.id = id;
         this.image = image;
         this.name = name;
@@ -68,11 +68,11 @@ public class Jelo {
         this.kategorija = kategorija;
     }
 
-    public List<Sastojak> getSastojci() {
+    public String getSastojci() {
         return sastojci;
     }
 
-    public void setSastojci(List<Sastojak> sastojci) {
+    public void setSastojci(String sastojci) {
         this.sastojci = sastojci;
     }
 
