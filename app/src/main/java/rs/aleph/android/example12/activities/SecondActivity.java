@@ -6,28 +6,20 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
 
 import rs.aleph.android.example12.R;
-import rs.aleph.android.example12.activities.model.Jelo;
-import rs.aleph.android.example12.activities.model.Kategorija;
-import rs.aleph.android.example12.activities.model.Sastojak;
 import rs.aleph.android.example12.activities.provider.JeloProvider;
 import rs.aleph.android.example12.activities.provider.KategorijaProvider;
-import rs.aleph.android.example12.activities.provider.SastojciProvider;
 
 // Each activity extends Activity class
 public class SecondActivity extends Activity {
@@ -42,7 +34,7 @@ public class SecondActivity extends Activity {
         // Each lifecycle method should call the method it overrides
         super.onCreate(savedInstanceState);
         // setContentView method draws UI
-        setContentView(R.layout.activity_second);
+        setContentView(R.layout.activity_second_constraint);
 
         // Shows a toast message (a pop-up message)
         Toast toast = Toast.makeText(getBaseContext(), "SecondActivity.onCreate()", Toast.LENGTH_SHORT);
