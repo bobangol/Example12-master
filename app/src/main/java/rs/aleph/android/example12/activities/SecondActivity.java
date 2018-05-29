@@ -34,7 +34,7 @@ public class SecondActivity extends Activity {
         // Each lifecycle method should call the method it overrides
         super.onCreate(savedInstanceState);
         // setContentView method draws UI
-        setContentView(R.layout.activity_second_constraint);
+        setContentView(R.layout.activity_second_relative);
 
         // Shows a toast message (a pop-up message)
         Toast toast = Toast.makeText(getBaseContext(), "SecondActivity.onCreate()", Toast.LENGTH_SHORT);

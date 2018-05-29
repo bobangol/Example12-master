@@ -12,7 +12,7 @@
     <!-- TextView displays text to the user. -->
     <TextView
         android:id="@+id/tv_name"
-        android:layout_width="129dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
         android:layout_below="@+id/iv_image"
