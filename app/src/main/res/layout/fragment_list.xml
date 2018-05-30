@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- LinearLayout layouts views lineary (either horizontaly or verticaly). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- ListView displays a list of scrollable items. The list items are automatically inserted to
+    the list using an Adapter that pulls content from a source such as an array or database query -->
+    <ListView
+        android:id="@+id/listofFruits"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

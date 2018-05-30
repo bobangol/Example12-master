@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:baselineAligned="false"
+    android:orientation="horizontal">
+
+    <!-- FrameLayout is designed to block out an area on the screen to display a single item.
+    Generally, FrameLayout should be used to hold a single child view. -->
+    <FrameLayout
+        android:id="@+id/master_view"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2">
+
+    </FrameLayout>
+
+    <!-- FrameLayout is designed to block out an area on the screen to display a single item.
+    Generally, FrameLayout should be used to hold a single child view. -->
+    <FrameLayout
+        android:id="@+id/detail_view"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3">
+
+    </FrameLayout>
+
+</LinearLayout>
