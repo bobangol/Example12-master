@@ -1,27 +1,35 @@
 package rs.aleph.android.example12.activities;
 
-import android.app.Activity;
+	import 	android.app.Activity;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
-import android.view.View;
+	import android.support.v4.widget.DrawerLayout;
+	import android.support.v7.app.ActionBarDrawerToggle;
+	import android.support.v7.app.AlertDialog;
+	import android.support.v7.app.AppCompatActivity;
+	import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
+	import android.widget.RelativeLayout;
+	import android.widget.Toast;
 
-import java.util.List;
+	import java.util.ArrayList;
+	import java.util.List;
 
 import rs.aleph.android.example12.R;
-import rs.aleph.android.example12.activities.fragments.DetailFragment;
+    import rs.aleph.android.example12.activities.dialogs.AboutDialog;
+    import rs.aleph.android.example12.activities.fragments.DetailFragment;
 import rs.aleph.android.example12.activities.fragments.ListFragment;
-import rs.aleph.android.example12.activities.provider.JeloProvider;
+    import rs.aleph.android.example12.activities.model.NavigationItem;
+    import rs.aleph.android.example12.activities.provider.JeloProvider;
 
 
 // Each activity extends Activity class
-public class FirstActivity extends Activity implements ListFragment.OnItemSelectedListener {
+public class FirstActivity extends AppCompatActivity implements ListFragment.OnItemSelectedListener {
 
 	// Screen orientation
 	private boolean landscape = false;
@@ -35,6 +43,55 @@ public class FirstActivity extends Activity implements ListFragment.OnItemSelect
 	// Detail fragment
 	private DetailFragment detailFragment = null;
 
+	private class DrawerItemClickListener implements ListView.OnItemClickListener {
+		@Override
+		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+			if (position == 0) {
+				// TODO
+				// FirstActivity is already shown
+			} else if (position == 1) {
+				Intent settings = new Intent(FirstActivity.this,SettingsActivity.class);
+				startActivity(settings);
+			} else if (position == 2) {
+				if (dialog == null){
+					dialog = new AboutDialog(FirstActivity.this).prepareDialog();
+				} else {
+					if (dialog.isShowing()) {
+						dialog.dismiss();
+					}
+				}
+				// TODO: SImplify
+				// To not create dialog class
+				// call it from here.
+
+				dialog.show();
+			}
+
+			drawerList.setItemChecked(position, true);
+			setTitle(drawerItems.get(position).getTitle());
+			drawerLayout.closeDrawer(drawerPane);
+
+		}
+	}
+
+	// Attributes used by NavigationDrawer
+	private DrawerLayout drawerLayout;
+	private ListView drawerList;
+	private ActionBarDrawerToggle drawerToggle;
+	private RelativeLayout drawerPane;
+	private CharSequence drawerTitle;
+	private ArrayList<NavigationItem> drawerItems = new ArrayList<NavigationItem>();
+
+	// Attributes used by Dialog
+	private AlertDialog dialog;
+
+	// Attributes representing the activity's state
+	private boolean landscapeMode = false; // Is the device in the landscape mode?
+	private boolean masterShown = false; // Is the MasterFragment fragment shown?
+	private boolean detailShown = false; // Is the DetailFragment fragment shown?
+
+	private int itemId = 0; // Selected item ID
+
 	// onCreate method is a lifecycle method called when he activity is starting
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 	{
@@ -43,7 +100,7 @@ public class FirstActivity extends Activity implements ListFragment.OnItemSelect
 		super.onCreate(savedInstanceState);
 
 		// Shows a toast message (a pop-up message)
-		Toast.makeText(getBaseContext(), "FirstActivity.onCreate()", Toast.LENGTH_SHORT).show();
+		//Toast.makeText(getBaseContext(), "FirstActivity.onCreate()", Toast.LENGTH_SHORT).show();
 
 		// Draws layout
 		setContentView(R.layout.activity_first);
