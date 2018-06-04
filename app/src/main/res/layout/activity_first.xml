@@ -1,16 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:orientation="vertical" >
 
-<!-- ListView displays a list of scrollable items. The list items are automatically inserted to
-the list using an Adapter that pulls content from a source such as an array or database query -->
-<ListView
-    android:id="@+id/listofJela"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"/>
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <!-- Toolbar is a standard toolbar for use within application content. -->
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:title="@string/activity_first_toolbar_title"
+            app:layout_scrollFlags="scroll|enterAlways">
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <!-- DrawerLayout is a top-level container for window content that allows for interactive "drawer" views to be pulled out from one or both vertical edges of the window. -->
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Main layout -->
+        <FrameLayout
+            android:id="@+id/master_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- NavigationDrawer layout -->
+        <RelativeLayout
+            android:id="@+id/drawerPane"
+            android:layout_width="280dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start">
+
+            <!-- List of NavigationDrawer items (pages) -->
+            <ListView
+                android:id="@+id/navList"
+                android:layout_width="280dp"
+                android:layout_height="match_parent"
+                android:choiceMode="singleChoice"
+                android:background="#ffffffff" />
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.DrawerLayout>
 
 
 

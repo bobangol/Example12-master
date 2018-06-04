@@ -13,12 +13,13 @@
         android:allowBackup="true"
         android:label="@string/activities"
         android:icon="@mipmap/ic_launcher1">
-        android:theme="@style/Theme.AppCompat.Light">
+        android:theme="@style/Theme.AppCompat">
 
         <!-- Declares 1st (main) activity. Action "MAIN" and category "LAUNCHER" properties makes it visible in the application launcher -->
         <activity
             android:name="rs.aleph.android.example12.activities.FirstActivity"
             android:label="@string/first_activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:icon="@mipmap/ic_launcher1">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

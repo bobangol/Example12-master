@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -111,7 +112,7 @@ public class DetailFragment extends Fragment {
         //rbRating.setRating(JeloProvider.getJeloById(position).get());
 
         // Finds "btnBuy" Button and sets "onClickListener" listener
-        Button btnBuy = (Button) getView().findViewById(R.id.btn_buy);
+        FloatingActionButton btnBuy = (FloatingActionButton) getView().findViewById(R.id.btn_buy);
         btnBuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
