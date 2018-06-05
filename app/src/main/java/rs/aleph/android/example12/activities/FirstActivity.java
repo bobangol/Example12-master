@@ -131,6 +131,7 @@ public class FirstActivity extends AppCompatActivity implements ListFragment.OnI
 
 		// Populates a list of NavigationDrawer items
 		drawerItems.add(new NavigationItem(getString(R.string.drawer_home), getString(R.string.drawer_home_long), R.drawable.ic_action_product));
+		drawerItems.add(new NavigationItem(getString(R.string.drawer_home1), getString(R.string.drawer_home_long1), R.drawable.ic_action_product));
 		drawerItems.add(new NavigationItem(getString(R.string.drawer_settings), getString(R.string.drawer_settings_long), R.drawable.ic_action_settings));
 		drawerItems.add(new NavigationItem(getString(R.string.drawer_about), getString(R.string.drawer_about_long), R.drawable.ic_action_about));
 

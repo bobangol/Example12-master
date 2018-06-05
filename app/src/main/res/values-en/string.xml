@@ -40,6 +40,8 @@
     <string name="drawer_close">Close Navigation Drawer</string>
     <string name="drawer_home">Home</string>
     <string name="drawer_home_long">Show All Fruits</string>
+    <string name="drawer_home1">Home</string>
+    <string name="drawer_home_long1">Show All Meals</string>
     <string name="drawer_settings">Settings</string>
     <string name="drawer_settings_long">Change App Settings</string>
     <string name="drawer_about">About</string>
